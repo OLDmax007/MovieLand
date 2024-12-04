@@ -1,14 +1,14 @@
 import React from 'react';
-import Link from "next/link";
+import MenuLink from "@/app/components/menu-link/MenuLink";
 
 const Menu = () => {
     return (
         <nav>
             <ul>
-            <li><Link href={'/'}>Home</Link></li>
-            <li><Link href={'/movies'}>Movies</Link></li>
-            <li><Link href={'/#about'}>About</Link></li>
-            <li><Link href={'/#contact'}>Contact</Link></li>
+            <li><MenuLink path={'/'}>Home</MenuLink></li>
+            <li><MenuLink path={'/movies'}>Movies</MenuLink></li>
+            <li><MenuLink path={'/#about'}>About</MenuLink></li>
+            <li><MenuLink path={'/#contact'}>Contact</MenuLink></li>
             </ul>
         </nav>
     );
