@@ -5,7 +5,7 @@ import UserInfo from "@/app/components/user-info/UserInfo";
 const Header = () => {
     return (
         <header>
-            <h1>MovieLand</h1>
+            <span>MovieLand</span>
             <Menu/>
             <UserInfo/>
         </header>
