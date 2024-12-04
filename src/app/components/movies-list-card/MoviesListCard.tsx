@@ -6,10 +6,10 @@ interface IMoviesListCardProps {
 }
 
 
-const MoviesListCard:FC<IMoviesListCardProps> = () => {
+const MoviesListCard:FC<IMoviesListCardProps> = ({movie}) => {
     return (
         <div>
-
+            {JSON.stringify(movie)}
         </div>
     );
 };

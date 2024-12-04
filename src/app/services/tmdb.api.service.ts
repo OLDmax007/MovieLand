@@ -2,11 +2,14 @@ import {IResponseMovies} from "@/app/models/IResponseMovies";
 import {IMovie} from "@/app/models/IMovie";
 import {accessToken} from "@/app/constans/authorization";
 import {IGenre} from "@/app/models/IGenre";
+import urls from "@/app/constans/urls";
+
+const {movies: {moviesBaseUrl}, genres: {genresBaseUrl} } = urls
 
 const moviesService = {
     getAllMovies: async (): Promise<IMovie[]> => {
         try {
-            const response = await fetch('https://api.themoviedb.org/3/discover/movie', {
+            const response = await fetch(moviesBaseUrl, {
                 headers: {
                     Authorization: accessToken
                 }
@@ -26,7 +29,7 @@ const moviesService = {
 
     getAllGenres: async ():Promise<IGenre[]> => {
         try {
-            const response = await fetch('https://api.themoviedb.org/3/genre/movie/list', {
+            const response = await fetch(genresBaseUrl, {
                 headers: {
                     Authorization: accessToken
                 }
