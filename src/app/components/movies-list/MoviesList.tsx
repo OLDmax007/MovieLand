@@ -7,11 +7,11 @@ const MoviesList = async () => {
     const movies:IMovie[] = await moviesService.getAllMovies()
 
     return (
-        <div>
+        <section>
             {movies.map((movie:IMovie, index:number) => (
                 <MoviesListCard key={index} movie={movie}/>
             ))}
-        </div>
+        </section>
     );
 };
 

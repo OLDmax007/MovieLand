@@ -1,0 +1,8 @@
+.movie>img {
+    width: 185.523px;
+    height: 262.207px;
+    flex-shrink: 0;
+    border-radius: 9.276px;
+    background: lightgray -10.462px -0.096px / 112.782% 100% no-repeat;
+    border: 0.618px solid #000;
+}
