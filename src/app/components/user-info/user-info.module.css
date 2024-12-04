@@ -4,6 +4,8 @@
 }
 
 .userDesc {
+    color: #FFF;
+    font-family: Poppins, sans-serif;
     height: 100%;
     display: flex;
     flex-direction: column;
