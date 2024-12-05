@@ -7,7 +7,7 @@ const Menu = () => {
         <nav>
             <ul className={styles.menu}>
             <li><MenuLink path={'/'}>Home</MenuLink></li>
-            <li><MenuLink path={'/movies'}>Movies</MenuLink></li>
+            <li><MenuLink path={'/pages/movies'}>Movies</MenuLink></li>
             <li><MenuLink path={'/#about'}>About</MenuLink></li>
             <li><MenuLink path={'/#contact'}>Contact</MenuLink></li>
             </ul>
