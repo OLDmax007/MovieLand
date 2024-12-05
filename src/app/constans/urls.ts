@@ -1,6 +1,7 @@
 const urls = {
     movies: {
-        moviesBaseUrl: 'https://api.themoviedb.org/3/discover/movie'
+        moviesBaseUrl: 'https://api.themoviedb.org/3/discover/movie',
+        paramPage: '?page='
     },
 
     genres: {

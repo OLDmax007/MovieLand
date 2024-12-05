@@ -1,0 +1,10 @@
+.movies {
+    width: 100%;
+    height: 50vh;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0A031C;
+    backdrop-filter: blur(13.295852661132812px);
+}

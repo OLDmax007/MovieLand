@@ -4,15 +4,16 @@ import {accessToken} from "@/app/constans/authorization";
 import {IGenre} from "@/app/models/IGenre";
 import urls from "@/app/constans/urls";
 
-const {movies: {moviesBaseUrl}, genres: {genresBaseUrl} } = urls
+const {movies: {moviesBaseUrl, paramPage}, genres: {genresBaseUrl} } = urls
 
 const moviesService = {
-    getAllMovies: async (): Promise<IMovie[]> => {
+    getAllMovies: async (page:string): Promise<IMovie[]> => {
+
         try {
-            const response = await fetch(moviesBaseUrl, {
+            const response = await fetch(moviesBaseUrl + paramPage + page, {
                 headers: {
                     Authorization: accessToken
-                }
+                },
             });
 
             if (!response.ok) {

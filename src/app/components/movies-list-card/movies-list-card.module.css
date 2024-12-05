@@ -1,3 +1,7 @@
+.movie {
+    margin: 0 16px 0 16px;
+}
+
 .movie>img {
     width: 185.523px;
     height: 262.207px;
