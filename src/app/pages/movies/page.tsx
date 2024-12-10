@@ -10,6 +10,7 @@ const MoviesPage:FC<IMoviesPageProps> = ({searchParams}) => {
     return (
         <>
             <MoviesList searchParams={searchParams}/>
+            <MoviesList searchParams={searchParams}/>
         </>
     );
 };

@@ -18,7 +18,7 @@ const MoviesList = async ({ searchParams }: MoviesListProps) => {
             {movies.map((movie: IMovie, index: number) => (
                 <MoviesListCard key={index} movie={movie} />
             ))}
-            <Pagination/>
+            <Pagination uniquePage={'page'}/>
         </section>
     );
 };

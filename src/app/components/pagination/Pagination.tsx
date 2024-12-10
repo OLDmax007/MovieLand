@@ -2,22 +2,26 @@
 
 import React, { FC, useEffect } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
+interface IPaginationProps {
+    uniquePage: string
+}
 
-const Pagination: FC = () => {
+
+const Pagination: FC<IPaginationProps> = ({uniquePage}) => {
     const searchParams = useSearchParams();
     const router = useRouter();
 
-    const page:string = searchParams.get('page') || '1';
+    const page:string = searchParams.get(uniquePage) || '1';
     const currentPage:number = +page
 
     useEffect(() => {
-        if (!searchParams.has('page')) {
-            router.push(`?page=${currentPage}`);
+        if (!searchParams.has(uniquePage)) {
+            router.push(`?${uniquePage}=${currentPage}`);
         }
     }, [searchParams, currentPage, router]);
 
     const navigatePage = (page: number) => {
-        router.push(`?page=${page}`);
+        router.push(`?${uniquePage}=${page}`);
     };
 
     return (
