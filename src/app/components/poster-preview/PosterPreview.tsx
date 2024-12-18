@@ -1,5 +1,7 @@
 import React, {FC} from 'react';
-import urls from "@/app/constans/urls";
+import {urls} from "@/app/constans/urls";
+
+const {poster: {base}} = urls
 
 interface IPosterPreviewProps {
     posterUrl: string
@@ -8,7 +10,7 @@ interface IPosterPreviewProps {
 
 const PosterPreview:FC<IPosterPreviewProps> = ({posterUrl}) => {
     return (
-            <img src={urls.poster.posterBaseUrl + posterUrl} />
+            <img src={base + posterUrl} />
     );
 };
 

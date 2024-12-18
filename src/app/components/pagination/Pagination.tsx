@@ -1,27 +1,24 @@
 'use client';
 
-import React, { FC, useEffect } from 'react';
-import { useSearchParams, useRouter } from 'next/navigation';
-interface IPaginationProps {
-    uniquePage: string
-}
+import React, {useEffect} from 'react';
+import {useRouter, useSearchParams} from 'next/navigation';
 
-
-const Pagination: FC<IPaginationProps> = ({uniquePage}) => {
+const Pagination = () => {
     const searchParams = useSearchParams();
     const router = useRouter();
 
-    const page:string = searchParams.get(uniquePage) || '1';
-    const currentPage:number = +page
+    const page: string = searchParams.get('page') || '1';
+    const currentPage: number = isNaN(+page) ? 1 : +page;
 
     useEffect(() => {
-        if (!searchParams.has(uniquePage)) {
-            router.push(`?${uniquePage}=${currentPage}`);
+        if (!searchParams.has('page')) {
+            router.push(`?page=1`);
         }
-    }, [searchParams, currentPage, router]);
+    }, [searchParams, router]);
 
     const navigatePage = (page: number) => {
-        router.push(`?${uniquePage}=${page}`);
+        if (page < 1) return;
+        router.push(`?page=${page}`);
     };
 
     return (
