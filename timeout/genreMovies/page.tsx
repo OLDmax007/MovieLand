@@ -3,7 +3,7 @@ import MoviesList from "@/app/components/movies-list/MoviesList";
 import {queries, urls} from "@/app/constans/urls";
 import moviesService from "@/app/services/tmdb.api.service";
 
-const { genres: { byGenre} } = urls;
+const { movies: {base} } = urls;
 const { pageQuery } = queries;
 
 interface IMoviesPageProps {
@@ -13,7 +13,7 @@ interface IMoviesPageProps {
 const MoviesPage: FC<IMoviesPageProps> = ({ searchParams }) => {
     return (
         <>
-             <MoviesList getCustomMovies={moviesService.getMoviesByGenre}searchParams={searchParams} url={byGenre('10752')} pageQuery={pageQuery}/>
+             <MoviesList getCustomMovies={moviesService.getAllMovies} searchParams={searchParams} url={base} pageQuery={pageQuery}/>
         </>
     );
 };

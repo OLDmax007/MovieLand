@@ -12,6 +12,7 @@ const MoviesListCard:FC<IMoviesListCardProps> = ({movie}) => {
     return (
         <div className={styles.movie}>
             <PosterPreview posterUrl={movie.poster_path}/>
+            <h2>{movie.title}</h2>
         </div>
     );
 };

@@ -13,7 +13,7 @@ interface IMoviesListProps {
 }
 
 const MoviesList = async ({getCustomMovies, searchParams, url, pageQuery }: IMoviesListProps) => {
-    const page: string = searchParams.page || '1';
+    const page: string = searchParams?.page || '1';
     console.log("URL comp:", `${url}?${pageQuery}${page}`);
     const movies: IMovie[] = (await getCustomMovies(url, pageQuery, page)).slice(0,5)
 

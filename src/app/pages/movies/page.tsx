@@ -13,9 +13,7 @@ interface IMoviesPageProps {
 const MoviesPage: FC<IMoviesPageProps> = ({ searchParams }) => {
     return (
         <>
-            MOVIES
-            {/* <MoviesList getCustomMovies={moviesService.getAllMovies}searchParams={searchParams} url={base} pageQuery={pageQuery}/>*/}
-            {/*<MoviesList getCustomMovies={moviesService.getMoviesByGenre} searchParams={searchParams} url={byGenre('28')} pageQuery={pageQuery} />*/}
+             <MoviesList getCustomMovies={moviesService.getAllMovies} searchParams={searchParams} url={base} pageQuery={pageQuery}/>
         </>
     );
 };
