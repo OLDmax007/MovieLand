@@ -6,12 +6,27 @@ interface IMovieInfoProps {
 }
 
 const MovieInfo: FC<IMovieInfoProps> = async ({searchParams}) => {
-    const movie = JSON.parse((await searchParams).movie) as IMovie
-    console.log(movie)
+    const movie: IMovie = JSON.parse((await searchParams).movie) as IMovie
     return (
-        <div>
+        <section>
+            <div className={'wrapper-container'}>
+                <div className={'left-container'}>
+                    <h3>
+                        {movie.title}
+                    </h3>
+                    <p>{movie.overview}</p>
+                    <ul>
+                        <li>{movie.video ? 'There is film' : 'No film'}</li>
+                        <li>{movie.adult ? '18+' : '0+'}</li>
+                        <li>{movie.release_date}</li>
+                        <li>{movie.popularity}</li>
+                    </ul>
+                </div>
+                <div className={'right-container'}>
 
-        </div>
+                </div>
+            </div>
+        </section>
     );
 };
 

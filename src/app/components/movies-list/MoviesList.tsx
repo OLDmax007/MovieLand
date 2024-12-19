@@ -3,8 +3,6 @@ import {IMovie} from "@/app/models/IMovie";
 import MoviesListCard from "@/app/components/movies-list-card/MoviesListCard";
 import styles from './movies-list.module.css';
 import Pagination from "@/app/components/pagination/Pagination";
-import moviesService from "@/app/services/tmdb.api.service";
-import {getGenreNames} from "@/app/helpers/helpers";
 
 interface IMoviesListProps {
     getCustomMovies: (url:string, pageQuery: string, page: string) => Promise<IMovie[]>;

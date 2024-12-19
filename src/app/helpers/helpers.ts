@@ -13,4 +13,10 @@ const getGenreNames = async (genres: number[]) => {
 
 };
 
-export { getGenreNames };
+const getStarRating = (voteAverage: number) => {
+    const starRating:number = Math.round(voteAverage / 2);
+    const stars:string = '★'.repeat(starRating) + '☆'.repeat(5 - starRating);
+    return stars;
+}
+
+export { getGenreNames, getStarRating };
