@@ -3,6 +3,7 @@ import {IMovie} from "@/app/models/IMovie";
 import {accessToken} from "@/app/constans/authorization";
 import {IGenre} from "@/app/models/IGenre";
 import {IMoviesService} from "@/app/models/IService";
+import {urls} from "@/app/constans/urls";
 
 const moviesService:IMoviesService = {
     getAllMovies: async (url: string, pageQuery: string, page: string): Promise<IMovie[]> => {
@@ -34,7 +35,6 @@ const moviesService:IMoviesService = {
                 headers: {
                     Authorization: accessToken,
                 },
-                // cache: "no-cache"
 
             });
 
@@ -53,7 +53,7 @@ const moviesService:IMoviesService = {
     
     getAllGenres: async (): Promise<IGenre[]> => {
         try {
-            const response = await fetch('', {
+            const response = await fetch(urls.genres.genresUrl, {
                 headers: {
                     Authorization: accessToken
                 }
