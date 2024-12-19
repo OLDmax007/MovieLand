@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import {IMovie} from "@/app/models/IMovie";
+import StarRating from "@/app/components/star-rating/StarRating";
 
 interface IMovieInfoProps {
     searchParams: Promise<{ movie: string }>
@@ -21,6 +22,7 @@ const MovieInfo: FC<IMovieInfoProps> = async ({searchParams}) => {
                         <li>{movie.release_date}</li>
                         <li>{movie.popularity}</li>
                     </ul>
+                    <StarRating voteAverage={movie.vote_average}/>
                 </div>
                 <div className={'right-container'}>
 
