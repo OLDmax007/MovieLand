@@ -3,7 +3,7 @@ import MoviesList from "@/app/components/movies-list/MoviesList";
 import { queries, urls } from "@/app/constans/urls";
 import moviesService from "@/app/services/tmdb.api.service";
 
-const { movies: { base }, genres: { byGenre } } = urls;
+const { movies: { base } } = urls;
 const { pageQuery } = queries;
 
 interface IMoviesPageProps {
