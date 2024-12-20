@@ -2,7 +2,8 @@ import React from 'react';
 import {Metadata} from 'next';
 
 export const metadata: Metadata = {
-    title: 'Metadata',
+    title: 'Movies Collection',
+    description: 'Browse and explore a wide collection of movies.',
 };
 
 interface ILayoutProps  {

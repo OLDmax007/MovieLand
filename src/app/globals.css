@@ -24,7 +24,6 @@ header {
 }
 
 header > span {
-    text-transform: uppercase;
     font-family: Poppins, sans-serif;
     font-size: 44px;
     font-weight: 600;

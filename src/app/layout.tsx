@@ -2,7 +2,7 @@ import type {Metadata} from "next";
 import "./globals.css";
 import Header from "@/app/components/header/Header";
 import Footer from "@/app/components/footer/Footer";
-
+import Head from "next/head";
 
 export const metadata: Metadata = {
     title: "MovieLand",
@@ -16,11 +16,15 @@ export default function RootLayout({children,}: Readonly<{
 }>) {
     return (
         <html lang="en">
+        <Head>
+            <link rel="icon" href="favicon.ico"/>
+        </Head>
         <body>
         <Header/>
         {children}
         <Footer/>
         </body>
         </html>
-    );
+    )
+        ;
 }
