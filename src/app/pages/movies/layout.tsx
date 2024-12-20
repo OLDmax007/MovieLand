@@ -13,7 +13,6 @@ interface ILayoutProps  {
 const MoviesLayout = ({ children }: ILayoutProps) => {
 return (
         <>
-
             {children}
         </>
     );
