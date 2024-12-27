@@ -1,0 +1,33 @@
+.ratingContainer {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.starFulled {
+    color: gold;
+    text-shadow: 0 0 10px rgba(255, 223, 0, 0.8);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.starEmpty {
+    font-size: 24px;
+    color: #ccc;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.starFulled:hover,
+.starEmpty:hover {
+    transform: scale(1.2);
+    color: #ffa500;
+    cursor: pointer;
+}
+
+.starFulled:active,
+.starEmpty:active {
+    transform: scale(1);
+}
+
+.ratingContainer:hover .star-empty {
+    color: #ddd;
+}

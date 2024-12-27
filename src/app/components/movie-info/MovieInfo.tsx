@@ -1,18 +1,18 @@
 import React, {FC} from 'react';
-import {IMovie} from "@/app/models/IMovie";
 import StarRating from "@/app/components/star-rating/StarRating";
 import styles from './movie-info.module.css'
 import {urls} from "@/app/constans/urls";
+import moviesService from "@/app/services/tmdb.api.service";
 
 const {poster: {base}} = urls
 
 interface IMovieInfoProps {
-    searchParams: Promise<{ movie: string }>
+    searchParams: Promise<{movieTitle: string}>
 }
 
 
 const MovieInfo: FC<IMovieInfoProps> = async ({searchParams}) => {
-    const movie: IMovie = JSON.parse((await searchParams).movie) as IMovie
+    const movie = await moviesService.searchFilmByName((await searchParams).movieTitle)
     return (
         <section>
             <div className={styles.wrapperContainer}

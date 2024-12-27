@@ -17,10 +17,12 @@ const MoviesList = async ({getCustomMovies, searchParams, url, pageQuery }: IMov
     const movies: IMovie[] = (await getCustomMovies(url, pageQuery, page)).slice(0,5)
 
     return (
-        <section className={styles.movies}>
-            {movies.map((movie: IMovie, index: number) => (
+        <section className={styles.moviesContainer}>
+            <div className={styles.movies}>
+                {movies.map((movie: IMovie, index: number) => (
                 <MoviesListCard key={index} movie={movie} />
-            ))}
+                ))}
+            </div>
             <Pagination/>
         </section>
     );

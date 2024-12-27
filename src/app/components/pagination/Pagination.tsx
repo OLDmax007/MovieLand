@@ -2,6 +2,7 @@
 
 import React, {useEffect} from 'react';
 import {useRouter, useSearchParams} from 'next/navigation';
+import styles from './pagination.module.css'
 
 const Pagination = () => {
     const searchParams = useSearchParams();
@@ -22,7 +23,7 @@ const Pagination = () => {
     };
 
     return (
-        <div>
+        <div className={styles.buttons}>
             <button disabled={currentPage === 1} onClick={() => navigatePage(currentPage - 1)}>
                 Prev
             </button>

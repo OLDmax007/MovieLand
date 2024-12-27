@@ -1,6 +1,7 @@
 const tmdbUrl: string = 'https://api.themoviedb.org/3/'
 
 const queries = {
+    query: 'query=',
     pageQuery: 'page=',
     genreQuery: 'with_genres=',
 };
@@ -10,6 +11,7 @@ const urls = {
 
     movies: {
         base: tmdbUrl + 'discover/movie',
+        searchMovie: tmdbUrl + 'search/movie?' + queries.query
     },
 
     genres: {
@@ -20,6 +22,7 @@ const urls = {
     poster: {
         base: 'https://image.tmdb.org/t/p/original/'
     }
+
 }
 
 export {urls, queries};
