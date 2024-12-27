@@ -15,26 +15,26 @@ const SearchFilm = () => {
         try {
             const movie = await moviesService.searchFilmByName(nameOfFilm);
             if (!movie) {
-                setError('Film nod found');
+                setError('Movie nod found');
             } else {
                 router.push(`pages/movies/${movie.id}?movieTitle=${movie.title}`);
             }
         } catch (err) {
-            setError('Problem with searching film');
+            setError('Problem with searching movie');
         }
     };
 
     return (
         <main>
             <div className={styles.container}>
-                <h1>Your personal cinema on your devices</h1>
+                <h1>Your personal cinema on your device</h1>
                 <span>All news in one place</span>
-                <p>Ready to watch? Enter name of film</p>
+                <p>Ready to watch? Enter name of movie</p>
                 <form onSubmit={handleSubmit}>
                     <input
                         required={true}
                         type="text"
-                        placeholder="Enter name of film"
+                        placeholder="Enter name of movie"
                         value={nameOfFilm}
                         onChange={(e) => setNameOfFilm(e.target.value)}
                     />

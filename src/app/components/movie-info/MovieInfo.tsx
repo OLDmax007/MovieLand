@@ -3,6 +3,7 @@ import StarRating from "@/app/components/star-rating/StarRating";
 import styles from './movie-info.module.css'
 import {urls} from "@/app/constans/urls";
 import moviesService from "@/app/services/tmdb.api.service";
+import GenreBadge from "@/app/components/genre-badge/GenreBadge";
 
 const {poster: {base}} = urls
 
@@ -28,6 +29,7 @@ const MovieInfo: FC<IMovieInfoProps> = async ({searchParams}) => {
                         <li>{Math.round(movie.popularity)}</li>
                         <li>{movie.vote_average}</li>
                     </ul>
+                    <GenreBadge genres={movie.genre_ids}/>
                     <p>{movie.overview}</p>
                     <div className={styles.trailerActions}>
                         <button className={styles.btnTrailer}>Trailer</button>
