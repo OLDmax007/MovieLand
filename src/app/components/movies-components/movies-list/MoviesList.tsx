@@ -15,7 +15,7 @@ interface IMoviesListProps {
 
 const MoviesList = async ({getCustomMovies, searchParams, url, pageQuery }: IMoviesListProps) => {
     const page: string = searchParams?.page || '1';
-    const movies: IMovie[] = (await getCustomMovies(url, pageQuery, page)).slice(0,5)
+    const movies: IMovie[] = (await getCustomMovies(url, pageQuery, page))
 
     return (
         <div className={styles.moviesContainer}>

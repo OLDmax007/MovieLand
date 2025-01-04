@@ -15,7 +15,7 @@ interface IMoviesPageProps {
 
 const MoviesPage: FC<IMoviesPageProps> = ({ searchParams }) => {
     return (
-        <section className={styles.moviesContainer}>
+        <section className={styles.sectionMovies}>
             <MoviesList getCustomMovies={moviesService.getAllMovies} searchParams={searchParams} url={base} pageQuery={pageQuery}/>
         </section>
     );

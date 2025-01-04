@@ -1,5 +1,11 @@
+.sectionMovies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .moviesContainer {
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,10 +15,9 @@
 
 .movies {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
+    display: grid;
+    grid-template-columns: repeat(5, 0fr);
+    gap: 100px;
     background: #0A031C;
     backdrop-filter: blur(15px);
 }

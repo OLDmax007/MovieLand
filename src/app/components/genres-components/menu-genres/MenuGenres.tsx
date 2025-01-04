@@ -1,10 +1,10 @@
 import React from 'react';
 import {IGenre} from "@/app/models/IGenre";
 import moviesService from "@/app/services/tmdb.api.service";
-import Genre from "@/app/components/genres-components/genres-menu/Genre";
+import Genre from "@/app/components/genres-components/menu-genres/Genre";
 
 
-const GenresMenu = async () => {
+const MenuGenres = async () => {
     const apiGenres:IGenre[] = await moviesService.getAllGenres();
 
     return (
@@ -22,4 +22,4 @@ const GenresMenu = async () => {
     );
 };
 
-export default GenresMenu;
+export default MenuGenres;
