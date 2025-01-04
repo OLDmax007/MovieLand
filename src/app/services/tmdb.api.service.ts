@@ -28,8 +28,10 @@ const moviesService: IMoviesService = {
     },
 
     getMoviesByGenre: async (url: string, pageQuery: string, page: string): Promise<IMovie[]> => {
+        console.log(`${url}?${pageQuery}${page}`)
+
         try {
-            const response = await fetch(`${url}?${pageQuery}${page}`, {
+            const response = await fetch(`${url}&${pageQuery}${page}`, {
                 headers: {
                     Authorization: accessToken,
                 },
