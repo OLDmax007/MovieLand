@@ -51,7 +51,8 @@ const moviesService: IMoviesService = {
 
     getAllGenres: async (): Promise<IGenre[]> => {
         try {
-            const response = await fetch(urls.genres.genresUrl, {
+            const response = await fetch(urls.genres.base
+                , {
                 headers: {
                     Authorization: accessToken
                 }

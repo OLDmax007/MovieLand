@@ -1,9 +1,10 @@
 import React, {FC} from 'react';
-import StarRating from "@/app/components/star-rating/StarRating";
 import styles from './movie-info.module.css'
 import {urls} from "@/app/constans/urls";
 import moviesService from "@/app/services/tmdb.api.service";
-import GenreBadge from "@/app/components/genre-badge/GenreBadge";
+import GenreBadge from "@/app/components/genres-components/genre-badge/GenreBadge";
+import StarRating from "@/app/components/ui-components/star-rating/StarRating";
+
 
 const {poster: {base}} = urls
 
@@ -15,7 +16,6 @@ interface IMovieInfoProps {
 const MovieInfo: FC<IMovieInfoProps> = async ({searchParams}) => {
     const movie = await moviesService.searchFilmByName((await searchParams).movieTitle)
     return (
-        <section>
             <div className={styles.wrapperContainer}
                  style={{backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent), url(${base + movie.backdrop_path})`}}>
                 <div className={styles.content}>
@@ -61,7 +61,6 @@ const MovieInfo: FC<IMovieInfoProps> = async ({searchParams}) => {
                     </button>
                 </div>
             </div>
-        </section>
     );
 };
 

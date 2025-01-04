@@ -1,8 +1,9 @@
 import React from 'react';
 import {IMovie} from "@/app/models/IMovie";
-import MoviesListCard from "@/app/components/movies-list-card/MoviesListCard";
 import styles from './movies-list.module.css';
-import Pagination from "@/app/components/pagination/Pagination";
+import MoviesListCard from "@/app/components/movies-components/movies-list-card/MoviesListCard";
+import Pagination from "@/app/components/ui-components/pagination/Pagination";
+
 
 interface IMoviesListProps {
     getCustomMovies: (url:string, pageQuery: string, page: string) => Promise<IMovie[]>;
@@ -17,14 +18,14 @@ const MoviesList = async ({getCustomMovies, searchParams, url, pageQuery }: IMov
     const movies: IMovie[] = (await getCustomMovies(url, pageQuery, page)).slice(0,5)
 
     return (
-        <section className={styles.moviesContainer}>
+        <div className={styles.moviesContainer}>
             <div className={styles.movies}>
                 {movies.map((movie: IMovie, index: number) => (
                 <MoviesListCard key={index} movie={movie} />
                 ))}
             </div>
             <Pagination/>
-        </section>
+        </div>
     );
 };
 

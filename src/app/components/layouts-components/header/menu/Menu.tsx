@@ -1,11 +1,12 @@
 import React from 'react';
-import MenuLink from "@/app/components/menu-link/MenuLink";
-import styles from  './menu.module.css'
+import MenuLink from "@/app/components/ui-components/menu-link/MenuLink";
+
+
 
 const Menu = () => {
     return (
         <nav>
-            <ul className={styles.menu}>
+            <ul>
             <li><MenuLink path={'/'}>Home</MenuLink></li>
             <li><MenuLink path={'/pages/movies'}>Movies</MenuLink></li>
             <li><MenuLink path={'#about-info'}>About</MenuLink></li>

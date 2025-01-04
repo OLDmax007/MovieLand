@@ -12,6 +12,7 @@ body {
 
 }
 
+
 header, section, footer {
     padding: 0 50px 0 50px;
 }
@@ -33,20 +34,37 @@ header > span {
     -webkit-text-fill-color: transparent;
 }
 
-nav > ul {
+header > nav > ul {
     display: flex;
-    list-style-type: none;
     text-transform: uppercase;
 }
 
-nav > ul > li {
+header > nav > ul > li {
     padding: 10px;
 }
 
-nav > ul > li > a {
+header > nav > ul > li > a {
     color: #FFF;
     font-size: 19px;
     text-decoration: none;
+}
+
+main {
+    color: white;
+    background: #0A031C;
+}
+
+main > div {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    margin: 30px auto;
+    width: 90vw;
+    height: 80vh;
+    border-radius: 10px;
+    background: linear-gradient(to right, rgba(6, 18, 60, 0.5), rgba(255, 44, 120, 0.5));
+    position: relative;
+    overflow: hidden;
 }
 
 section {
@@ -54,12 +72,17 @@ section {
     padding: 40px 0 40px 0;
 }
 
-main {
-    color: white;
-    background: #0A031C;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+aside > nav > ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 16px;
+    padding: 16px;
+}
+
+ul {
+    list-style-type: none;
 }
 
 p {
@@ -69,6 +92,8 @@ p {
 
 a {
     text-decoration: none;
+    color: white;
+
 }
 
 a:hover, button:hover, svg:hover {

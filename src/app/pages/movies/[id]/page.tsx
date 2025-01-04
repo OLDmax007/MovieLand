@@ -1,16 +1,17 @@
 import React, {FC} from 'react';
-import MovieInfo from "@/app/components/movie-info/MovieInfo";
+import MovieInfo from "@/app/components/movies-components/movie-info/MovieInfo";
+
 
 interface IMovieInfoPageProps {
-    searchParams: Promise<{movie: string}>;
+    searchParams: Promise<{movieTitle: string}>;
 }
 
 const MovieInfoPage: FC<IMovieInfoPageProps> = ({ searchParams }) => {
 
     return (
-        <>
+        <section>
             <MovieInfo searchParams={searchParams}/>
-        </>
+        </section>
     );
 };
 

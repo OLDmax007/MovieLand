@@ -1,7 +1,10 @@
-import React, { FC } from 'react';
-import MoviesList from "@/app/components/movies-list/MoviesList";
-import { queries, urls } from "@/app/constans/urls";
+import React, {FC} from 'react';
+
+import {queries, urls} from "@/app/constans/urls";
 import moviesService from "@/app/services/tmdb.api.service";
+import styles from "../../components/movies-components/movies-list/movies-list.module.css"
+import MoviesList from "@/app/components/movies-components/movies-list/MoviesList";
+
 
 const { movies: { base } } = urls;
 const { pageQuery } = queries;
@@ -12,9 +15,9 @@ interface IMoviesPageProps {
 
 const MoviesPage: FC<IMoviesPageProps> = ({ searchParams }) => {
     return (
-        <>
-             <MoviesList getCustomMovies={moviesService.getAllMovies} searchParams={searchParams} url={base} pageQuery={pageQuery}/>
-        </>
+        <section className={styles.moviesContainer}>
+            <MoviesList getCustomMovies={moviesService.getAllMovies} searchParams={searchParams} url={base} pageQuery={pageQuery}/>
+        </section>
     );
 };
 

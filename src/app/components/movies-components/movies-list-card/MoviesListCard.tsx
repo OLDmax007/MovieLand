@@ -1,9 +1,10 @@
 import React, {FC} from 'react';
 import {IMovie} from "@/app/models/IMovie";
-import PosterPreview from "@/app/components/poster-preview/PosterPreview";
 import styles from './movies-list-card.module.css'
 import Link from "next/link";
-import StarRating from "@/app/components/star-rating/StarRating";
+import PosterPreview from "@/app/components/movies-components/poster-preview/PosterPreview";
+import StarRating from "@/app/components/ui-components/star-rating/StarRating";
+
 
 interface IMoviesListCardProps {
     movie: IMovie

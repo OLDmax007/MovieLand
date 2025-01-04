@@ -3,12 +3,10 @@ import {IGenre} from "@/app/models/IGenre";
 
 const getGenreNames = async (genres: number[]) :Promise<string[]> => {
     const apiGenres:IGenre[] = await moviesService.getAllGenres();
-    const genreNames= genres.map((genreId: number):string => {
+    return genres.map((genreId: number):string => {
         const genre = apiGenres.find((apiGenre:IGenre) => apiGenre.id === genreId);
         return genre ? genre.name : "No genre";
     });
-
-    return genreNames
 
 };
 

@@ -15,7 +15,7 @@ const urls = {
     },
 
     genres: {
-        genresUrl: tmdbUrl + 'genre/movie/list',
+        base: tmdbUrl + 'genre/movie/list',
         byGenre: (genreId: string): string =>  urls.movies.base + '?' + queries.genreQuery + genreId
     },
 
