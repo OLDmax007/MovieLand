@@ -9,11 +9,12 @@ const GenresMenu = async () => {
 
     return (
         <aside>
+            <h3>Or choose movie by category</h3>
             <nav>
                 <ul>
-                    {apiGenres.map((genre:IGenre, index) => (
-                       <Genre key={index} genre={genre}/>
-                     ))}
+                    {apiGenres.map((genre: IGenre, index) => (
+                        <Genre key={index} genre={genre}/>
+                    ))}
                 </ul>
             </nav>
 

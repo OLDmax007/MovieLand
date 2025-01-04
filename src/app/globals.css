@@ -50,6 +50,7 @@ header > nav > ul > li > a {
 }
 
 main {
+    padding: 30px;
     color: white;
     background: #0A031C;
 }
@@ -57,10 +58,9 @@ main {
 main > div {
     display: flex;
     justify-content: space-between;
-    padding: 50px;
+    padding: 40px;
     margin: 30px auto;
     width: 90vw;
-    height: 80vh;
     border-radius: 10px;
     background: linear-gradient(to right, rgba(6, 18, 60, 0.5), rgba(255, 44, 120, 0.5));
     position: relative;
@@ -72,6 +72,18 @@ section {
     padding: 40px 0 40px 0;
 }
 
+aside {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+aside > h3 {
+    width: 700px;
+    font-weight: 600;
+    font-size: 32px;
+    text-align: center;
+}
 
 aside > nav > ul {
     display: grid;
@@ -80,6 +92,43 @@ aside > nav > ul {
     gap: 16px;
     padding: 16px;
 }
+
+aside > nav > ul > li {
+    padding: 16px;
+    border: 1px solid #FF2C78;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(255, 44, 120, 0.1), rgba(6, 18, 60, 0.2));
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+aside > nav > ul > li:hover {
+    background: linear-gradient(135deg, rgba(255, 44, 120, 0.3), rgba(6, 18, 60, 0.4));
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+aside > nav > ul > li:hover::before {
+    transform: scaleX(1);
+}
+
+aside > nav > ul > li > a {
+    color: #FFF;
+    font-size: 16px;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    display: block;
+    padding: 8px 0;
+}
+
+aside > nav > ul > li:hover > a {
+    color: #FF2C78;
+}
+
+
 
 ul {
     list-style-type: none;
