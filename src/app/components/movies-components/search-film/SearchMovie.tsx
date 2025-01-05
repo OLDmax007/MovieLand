@@ -1,11 +1,11 @@
 'use client'
-import styles from './search-film.module.css'
+import styles from './search-movie.module.css'
 import React, { useState } from 'react';
 import moviesService from '@/app/services/tmdb.api.service';
 import { useRouter } from "next/navigation";
 
-const SearchFilm = () => {
-    const [nameOfFilm, setNameOfFilm] = useState<string>('');
+const SearchMovie = () => {
+    const [nameOfMovie, setNameOfFilm] = useState<string>('');
     const [error, setError] = useState<string>('');
     const router = useRouter();
 
@@ -13,7 +13,7 @@ const SearchFilm = () => {
         event.preventDefault();
         setError('');
         try {
-            const movie = await moviesService.searchFilmByName(nameOfFilm);
+            const movie = await moviesService.searchMovieByName(nameOfMovie);
             if (!movie) {
                 setError('Movie nod found');
             } else {
@@ -40,7 +40,7 @@ const SearchFilm = () => {
                         required={true}
                         type="text"
                         placeholder="Enter name of movie"
-                        value={nameOfFilm}
+                        value={nameOfMovie}
                         onChange={(e) => setNameOfFilm(e.target.value)}
                     />
                     <button type="submit">Search</button>
@@ -50,4 +50,4 @@ const SearchFilm = () => {
     );
 };
 
-export default SearchFilm;
+export default SearchMovie;

@@ -14,7 +14,7 @@ interface IMovieInfoProps {
 
 
 const MovieInfo: FC<IMovieInfoProps> = async ({searchParams}) => {
-    const movie = await moviesService.searchFilmByName((await searchParams).movieTitle)
+    const movie = await moviesService.searchMovieByName((await searchParams).movieTitle)
     return (
             <div className={styles.wrapperContainer}
                  style={{backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent), url(${base + movie.backdrop_path})`}}>

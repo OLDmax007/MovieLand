@@ -73,7 +73,7 @@ const moviesService: IMoviesService = {
         }
     },
 
-    searchFilmByName: async (name: string): Promise<IMovie> => {
+    searchMovieByName: async (name: string): Promise<IMovie> => {
         console.log(urls.movies.searchMovie + name)
         try {
             const response = await fetch(urls.movies.searchMovie + name, {
