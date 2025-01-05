@@ -7,8 +7,8 @@ const HomePage = async () => {
     return (
         <main>
             <div>
-            <SearchMovie/>
-            <GenresMenu/>
+                <SearchMovie/>
+                <GenresMenu/>
             </div>
         </main>
     );

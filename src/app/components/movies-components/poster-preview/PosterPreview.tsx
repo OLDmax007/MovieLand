@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import {urls} from "@/app/constans/urls";
+import Image from 'next/image';
 
 const {poster: {base}} = urls
 
@@ -9,8 +10,9 @@ interface IPosterPreviewProps {
 
 
 const PosterPreview:FC<IPosterPreviewProps> = ({posterUrl}) => {
+    console.log(base + posterUrl)
     return (
-            <img src={base + posterUrl} />
+        <Image src={base + posterUrl} alt={'Movie poster'} width={100} height={100}/>
     );
 };
 
